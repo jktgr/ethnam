@@ -387,7 +387,6 @@ class Ethna_ActionForm
      */
     public function getAppArray($escape = true)
     {
-        $this->backend->log(LOG_INFO, 'start getAppArray');
         $retval = array();
 
         $this->_getArray($this->app_vars, $retval, $escape);
