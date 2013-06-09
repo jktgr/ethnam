@@ -1215,7 +1215,7 @@ class Ethna_Controller
     /**
      *  実行するアクション名を返す
      *
-     *  @access private
+     *  @access protected
      *  @param  mixed   $default_action_name    指定のアクション名
      *  @return string  実行するアクション名
      */
@@ -1984,7 +1984,7 @@ class Ethna_Controller
             if (file_exists($action_dir . $class_path)) {
                 include_once $action_dir . $class_path;
             } else {
-                $this->logger->log(LOG_NOTICE, 'file not found:'.$action_dir . $class_path);
+                $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
                 return;
             }
         }
