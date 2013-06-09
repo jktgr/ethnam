@@ -30,7 +30,7 @@ class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle
         //  '-w[with-unittest]' and '-u[unittestskel]' option
         //  are not intuisive, but I dare to define them because
         //  -t and -s option are reserved by add-[action|view] handle
-        //  and Console_Getopt cannot interpret two-character option.
+        //  and Ethna_Getopt cannot interpret two-character option.
         //
         $r = $this->_getopt(
                   array('basedir=',
@@ -55,7 +55,7 @@ class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle
             return $r;
         }
 
-        $ret =& $this->_perform('Action', $action_name, $opt_list);
+        $ret = $this->_perform('Action', $action_name, $opt_list);
         return $ret;
     }
 
@@ -105,7 +105,7 @@ class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle
             $testskel = (isset($opt_list['unittestskel']))
                       ? end($opt_list['unittestskel'])
                       : null;
-            $r =& Ethna_Generator::generate("{$target}Test", $basedir, $target_name, $testskel, $gateway);
+            $r = Ethna_Generator::generate("{$target}Test", $basedir, $target_name, $testskel, $gateway);
             if (Ethna::isError($r)) {
                 printf("error occurred while generating action test skelton. please see also following error message(s)\n\n");
                 return $r;
@@ -142,4 +142,3 @@ EOS;
     }
 }
 // }}}
-
