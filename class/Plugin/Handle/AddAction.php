@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Handle_AddAction.php
+ *  AddAction.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -90,6 +90,7 @@ class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle
             $gateway = GATEWAY_WWW;
         }
         
+        //  possible target is Action, View.
         $r = Ethna_Generator::generate($target, $basedir,
                                         $target_name, $skelfile, $gateway);
         if (Ethna::isError($r)) {
