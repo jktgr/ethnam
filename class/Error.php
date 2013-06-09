@@ -74,11 +74,10 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
     if ($errno === E_STRICT) {
         return true;
     }
-    /* 
     if ($errno === E_RECOVERABLE_ERROR) {
         return true;
     }
-    */
+
     // printf()
     if (ini_get('display_errors')) {
         $is_debug = true;
