@@ -1,6 +1,6 @@
 <?php
 /**
- *  Ethna_Plugin_Handle_AddAppManager.php
+ *  AddAppManager.php
  *
  *  @author     nozzzzz <nozzzzz@gmail.com>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -57,4 +57,3 @@ EOS;
     }
 }
 // }}}
-
