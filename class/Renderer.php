@@ -391,15 +391,5 @@ class Ethna_Renderer
             $user_config
         );
     }
-
-    /**
-     * compiled template used by i18n command
-     *
-     * @return string or Ethna_Error
-     */
-    public function getCompiledContent($file)
-    {
-        return $this->template_dir . $this->template;
-    }
 }
 // }}}
