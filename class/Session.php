@@ -47,10 +47,12 @@ class Ethna_Session
      *  @param  string  $appid      アプリケーションID(セッション名として使用)
      *  @param  string  $save_dir   セッションデータを保存するディレクトリ
      */
-    public function __construct($ctl, $appid)
+    public function __construct($ctl, $appid, $save_dir)
     {
         $this->ctl = $ctl;
         $this->logger = $this->ctl->getLogger();
+
+        $this->session_save_dir = $save_dir;
 
         if ($this->session_save_dir != "") {
             session_save_path($this->session_save_dir);
