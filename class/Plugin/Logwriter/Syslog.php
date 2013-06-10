@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Logwriter_Syslog.php
+ *  Syslog.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -73,4 +73,3 @@ class Ethna_Plugin_Logwriter_Syslog extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
-
