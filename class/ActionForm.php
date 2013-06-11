@@ -31,10 +31,10 @@ class Ethna_ActionForm
      */
 
     /** @var    array   フォーム値定義(デフォルト) */
-    var $form_template = array();
+    public $form_template = array();
 
     /** @var    array   フォーム値定義 */
-    var $form = array();
+    public $form = array();
 
     /** @var    array   フォーム値 */
     var $form_vars = array();
