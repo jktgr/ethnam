@@ -49,6 +49,7 @@ class Ethna_Plugin_Logwriter
 
     /**#@-*/
 
+
     /**
      *  ログオプションを設定する
      *
