@@ -29,12 +29,6 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
      */
     function &generate($forward_name, $skelton = null)
     {
-        if (preg_match('/^owner_([A-Z]+)[a-z]+$/', $forward_name, $matches)) {
-            $entityName = $matches[1];
-        } else {
-            return Ethna::raiseError('invalid forward_name:' . $forward_name);
-        }
-
         $tpl_dir = $this->ctl->getTemplatedir();
         if ($tpl_dir{strlen($tpl_dir)-1} != '/') {
             $tpl_dir .= '/';
@@ -53,8 +47,6 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
         $macro = array();
         // add '_' for tpl and no user macro for tpl
         $macro['_project_id'] = $this->ctl->getAppId();
-        $macro['entity_lower'] = strtolower($entityName);
-        $macro['entity_upper'] = strtoupper($entityName);
         // generate
         if (file_exists($entity)) {
             printf("file [%s] already exists -> skip\n", $entity);
