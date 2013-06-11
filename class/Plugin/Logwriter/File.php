@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Logwriter_File.php
+ *  File.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -23,20 +23,20 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
      *  @access private
      */
 
-    /** @var    int     ログファイルハンドル */
-    var $fp;
+    /** @protected    int     ログファイルハンドル */
+    protected $fp;
 
-    /** @var    int     ログファイルパーミッション */
-    var $mode = 0666;
+    /** @protected    int     ログファイルパーミッション */
+    protected $mode = 0666;
 
     /**#@-*/
 
     /**
-     *  Ethna_Plugin_Logwriter_Fileクラスのコンストラクタ
+     *  Fileクラスのコンストラクタ
      *
      *  @access public
      */
-    function Ethna_Plugin_Logwriter_File()
+    public function __construct()
     {
         $this->fp = null;
     }
@@ -89,11 +89,10 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
             return;
         }
 
-        // modified by kashiwagi
         $microtime = microtime(true);
         $sec = floor($microtime);
-        $usec = $microtime - $sec;
-        $prefix = sprintf('%s %03d %s ', strftime('%Y/%m/%dT%H:%M:%S', $sec) , floor($usec*1000) , $this->ident);
+        $msec = floor(($microtime - $sec) * 1000);
+        $prefix = sprintf('%s.%03d %s ', strftime('%Y/%m/%dT%H:%M:%S', $sec) , $msec , $this->ident);
 
         if (array_key_exists("pid", $this->option)) {
             $prefix .= sprintf('[%d]', getmypid());
@@ -159,4 +158,3 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
-
