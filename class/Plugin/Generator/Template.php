@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Generator_Template.php
+ *  Template.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -27,7 +27,7 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
      *  @param  string  $skelton        スケルトンファイル名
      *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
      */
-    function &generate($forward_name, $skelton = null)
+    function generate($forward_name, $skelton = null)
     {
         $tpl_dir = $this->ctl->getTemplatedir();
         if ($tpl_dir{strlen($tpl_dir)-1} != '/') {
@@ -61,4 +61,3 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
     }
 }
 // }}}
-
