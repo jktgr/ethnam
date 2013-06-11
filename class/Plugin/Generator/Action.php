@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Generator_Action.php
+ *  Generator_Action.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -28,7 +28,7 @@ class Ethna_Plugin_Generator_Action extends Ethna_Plugin_Generator
      *  @param  int     $gateway        ゲートウェイ
      *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
      */
-    function &generate($action_name, $skelton = null, $gateway = GATEWAY_WWW)
+    function generate($action_name, $skelton = null, $gateway = GATEWAY_WWW)
     {
         if (preg_match('/^owner_([A-Z]+)[a-z]+$/', $action_name, $matches)) {
             $entityName = $matches[1];
@@ -93,4 +93,3 @@ class Ethna_Plugin_Generator_Action extends Ethna_Plugin_Generator
     }
 }
 // }}}
-
