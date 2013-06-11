@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Logwriter_Alertmail.php
+ *  Alertmail.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -24,7 +24,7 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
      *  @access private
      */
 
-    /** @var    array   アラート送信先メールアドレス */
+    /** @private    array   アラート送信先メールアドレス */
     var $mailaddress = array();
 
     /**#@-*/
@@ -95,7 +95,7 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
     {
         restore_error_handler();
 
-        $c =& Ethna_Controller::getInstance();
+        $c = Ethna_Controller::getInstance();
         $appid = $c->getAppId();
 
         $header = "Mime-Version: 1.0\n";
@@ -122,4 +122,3 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
-
