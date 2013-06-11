@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Generator.php
+ *  Generator.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -19,19 +19,18 @@
  */
 class Ethna_Plugin_Generator
 {
-    /** @var    object  Ethna_Controller    スケルトン生成に使うコントローラ */
-    var $ctl;
+    public $ctl;
 
     /**
      *  コンストラクタ
      *
      *  @access public
      */
-    function Ethna_Plugin_Generator(&$controller, $type, $name)
+    function __construct($controller, $type, $name)
     {
         // Ethna_Generatorでpluginを取得するときに使ったコントローラ
         // ex, add-projectではEthna_Controller, app-actionではApp_Controller
-        $this->ctl =& $controller;
+        $this->ctl = $controller;
     }
 
     /**
@@ -150,4 +149,3 @@ class Ethna_Plugin_Generator
     }
 }
 // }}}
-
