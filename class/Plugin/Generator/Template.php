@@ -36,14 +36,13 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
             $this->ctl->setLocale($locale);
         }
 
+        //  ロケール名がディレクトリに含まれていない場合は、
+        //  ディレクトリがないためなのでそれを補正 
         $tpl_dir = $this->ctl->getTemplatedir();
-        if ($tpl_dir{strlen($tpl_dir)-1} != '/') {
-            $tpl_dir .= '/';
-        }
         $tpl_path = $this->ctl->getDefaultForwardPath($forward_name);
 
         // entity
-        $entity = $tpl_dir . $tpl_path;
+        $entity = $tpl_dir . '/' . $tpl_path;
         Ethna_Util::mkdir(dirname($entity), 0755);
 
         // skelton
@@ -55,6 +54,8 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
         $macro = array();
         // add '_' for tpl and no user macro for tpl
         $macro['_project_id'] = $this->ctl->getAppId();
+        $macro['client_enc'] = $encoding;
+
         // generate
         if (file_exists($entity)) {
             printf("file [%s] already exists -> skip\n", $entity);
