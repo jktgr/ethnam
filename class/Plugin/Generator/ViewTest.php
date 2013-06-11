@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Generator_ViewTest.php
+ *  ViewTest.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -27,7 +27,7 @@ class Ethna_Plugin_Generator_ViewTest extends Ethna_Plugin_Generator
      *  @param  string  $skelton        スケルトンファイル名
      *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
      */
-    function &generate($forward_name, $skelton = null, $gateway = GATEWAY_WWW)
+    function generate($forward_name, $skelton = null, $gateway = GATEWAY_WWW)
     {
         $view_dir = $this->ctl->getViewdir();
         $view_class = $this->ctl->getDefaultViewClass($forward_name, $gateway);
@@ -78,4 +78,3 @@ class Ethna_Plugin_Generator_ViewTest extends Ethna_Plugin_Generator
     }
 }
 // }}}
-
