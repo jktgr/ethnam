@@ -24,8 +24,8 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
      *  @access private
      */
 
-    /** @private    array   アラート送信先メールアドレス */
-    var $mailaddress = array();
+    /** @protected    array   アラート送信先メールアドレス */
+    protected $mailaddress = array();
 
     /**#@-*/
 
