@@ -25,16 +25,24 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
      *  @access public
      *  @param  string  $forward_name   テンプレート名
      *  @param  string  $skelton        スケルトンファイル名
+     *  @param  string  $locale         ロケール名
+     *  @param  string  $encoding       エンコーディング
      *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
      */
-    function generate($forward_name, $skelton = null)
+    function generate($forward_name, $skelton = null, $locale, $encoding)
     {
+        //  ロケールが指定された場合は、それを優先する 
+        if (!empty($locale)) {
+            $this->ctl->setLocale($locale);
+        }
+
         $tpl_dir = $this->ctl->getTemplatedir();
         if ($tpl_dir{strlen($tpl_dir)-1} != '/') {
             $tpl_dir .= '/';
         }
         $tpl_path = $this->ctl->getDefaultForwardPath($forward_name);
 
+        // entity
         $entity = $tpl_dir . $tpl_path;
         Ethna_Util::mkdir(dirname($entity), 0755);
 
