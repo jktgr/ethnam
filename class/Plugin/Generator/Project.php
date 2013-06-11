@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_Project
 /**
- *  ¥¹¥±¥ë¥È¥óÀ¸À®¥¯¥é¥¹
+ *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ç”Ÿæˆã‚¯ãƒ©ã‚¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,12 +20,12 @@
 class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
 {
     /**
-     *  ¥×¥í¥¸¥§¥¯¥È¥¹¥±¥ë¥È¥ó¤òÀ¸À®¤¹¤ë
+     *  ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚¹ã‚±ãƒ«ãƒˆãƒ³ã‚’ç”Ÿæˆã™ã‚‹
      *
      *  @access public
-     *  @param  string  $id         ¥×¥í¥¸¥§¥¯¥ÈID
-     *  @param  string  $basedir    ¥×¥í¥¸¥§¥¯¥È¥Ù¡¼¥¹¥Ç¥£¥ì¥¯¥È¥ê
-     *  @return bool    true:À®¸ù false:¼ºÇÔ
+     *  @param  string  $id         ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆID
+     *  @param  string  $basedir    ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ™ãƒ¼ã‚¹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+     *  @return bool    true:æˆåŠŸ false:å¤±æ•—
      */
     function generate($id, $basedir)
     {
@@ -66,7 +66,7 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
 
         $basedir = sprintf("%s/%s", $basedir, $id);
 
-        // ¥Ç¥£¥ì¥¯¥È¥êºîÀ®
+        // ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä½œæˆ
         if (is_dir($basedir) == false) {
             // confirm
             printf("creating directory ($basedir) [y/n]: ");
@@ -100,7 +100,7 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
             }
         }
 
-        // ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ëºîÀ®
+        // ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
         $macro['ethna_version'] = ETHNA_VERSION;
         $macro['application_id'] = strtoupper($id);
         $macro['project_id'] = ucfirst($id);
