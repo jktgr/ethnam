@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Ethna_Plugin_Logwriter.php
+ *  Logwriter.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -48,19 +48,6 @@ class Ethna_Plugin_Logwriter
     );
 
     /**#@-*/
-
-    /**
-     *  Ethna_Plugin_Logwriterクラスのコンストラクタ
-     *
-     *  @access public
-     *  @param  string  $log_ident      ログアイデンティティ文字列(プロセス名等)
-     *  @param  int     $log_facility   ログファシリティ
-     *  @param  string  $log_file       ログ出力先ファイル名(LOG_FILEオプションが指定されている場合のみ)
-     *  @param  int     $log_option     ログオプション(LOG_FILE,LOG_FUNCTION...)
-     */
-    function Ethna_Plugin_Logwriter()
-    {
-    }
 
     /**
      *  ログオプションを設定する
