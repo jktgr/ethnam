@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Generator_Action.php
+ *  Action.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
